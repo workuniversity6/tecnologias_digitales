@@ -1,0 +1,211 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --rojo-girardot: #00f646b4;
+    --verde-girardot: #007584;
+    --gris-oscuro: #222;
+    --blanco-trans: rgba(255, 255, 255, 0.85);
+    --sombra: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('img/BG_general.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('img/BG_header.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px 0 0 0;
+    text-align: center;
+    border-bottom: 6px solid var(--rojo-girardot);
+    box-shadow: var(--sombra);
+}
+
+header h1 {
+    font-family: 'Impact', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--verde-girardot);
+    width: 100%;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+header nav ul li a.active {
+    background-color: var(--rojo-girardot);
+    box-shadow: 0 0 15px rgb(50, 229, 10);
+    transform: scale(1.05);
+    border-bottom: 4px solid white;
+}
+
+header nav ul li a:hover:not(.active) {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* --- CONTENEDOR PRINCIPAL (CENTRAR CONTENIDO) --- */
+main {
+    max-width: 1100px; /* Ancho máximo del contenido */
+    margin: 40px auto; /* Centra el bloque y da espacio arriba/abajo */
+    padding: 0 20px;   /* Evita que el contenido toque los bordes en móviles */
+}
+
+/* --- CONTENEDOR DE TÍTULO CON BLUR --- */
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.title-card {
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    padding: 15px 40px;
+    border-radius: 50px; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--sombra);
+}
+
+h2.main-title {
+    color: var(--gris-oscuro);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--verde-girardot);
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+h3.sub-section-title {
+    color: var(--rojo-girardot);
+    margin: 40px 0 20px 0;
+    font-size: 1.5rem;
+    border-left: 5px solid var(--verde-girardot);
+    padding-left: 10px;
+    text-shadow: 1px 1px 2px rgba(19, 14, 14, 0.8);
+}
+
+/* --- BLOQUES DE CONTENIDO --- */
+.blur-box {
+    background-color: rgba(255, 255, 255, 0.608);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(49, 43, 43, 0.3);
+    box-shadow: var(--sombra);
+}
+
+.blur-box p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* --- TARJETAS --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: rgb(160, 220, 212);
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--verde-girardot);
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h4 {
+    color: var(--gris-oscuro);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #1e1b1b;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-read-more {
+    background-color: var(--rojo-girardot);
+    color: #404d00; /* Color de texto más oscuro para legibilidad */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #005184;
+    color: white;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    header nav ul { flex-direction: column; }
+    header nav ul li a { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    main { margin: 20px auto; } /* Reduce margen en móviles */
+}
